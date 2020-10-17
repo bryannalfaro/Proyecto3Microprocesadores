@@ -27,8 +27,13 @@ int main(){
 	int hilos;
 	double convergencia=0;
 	int convergenciaEntera=0;
-	double expresion;
-	double valor;
+	double expresion=0;
+	double valor=0;
+	
+	double convergencia2=0;
+	int convergenciaEntera2=0;
+	double expresion2=0;
+	double valor2=0;
 	
 	printf("Bienvenido al programa de calculo de serie\n");
 	printf("Se calculara la serie de (1-1/raiz(n))^n\n");
@@ -62,23 +67,37 @@ int main(){
 	
 	printf("----------------------------------------------\n");
 	printf("EVALUANDO LA SERIE...........\n");
+	
 	//parte paralela para obtener las sumatorias
 	#pragma omp parallel for num_threads(hilos)
-		for(int i =1; i<600000; i++)
+		for(int i =1; i<700000; i++)
 		{
-			
-			 expresion = 1-sqrt(i);
-			 valor = pow(expresion,i);
+			 
+			 valor = pow(1-(1/sqrt(i)),i);
 			
 			#pragma omp atomic 
-				convergencia+=valor; 
+				convergencia+=valor;
+				
+		}
+		
+	#pragma omp parallel for num_threads(hilos)
+		for(int i =1; i<710000; i++)
+		{
+			
+			 
+			 valor2 = pow(1-(1/sqrt(i)),i);
+			
+			#pragma omp atomic 
+				convergencia2+=valor2;
+				
 		}	
 	
 	
 	convergenciaEntera = round(convergencia);
-	bool conv = isnan(convergencia);
-	
-	if((conv) == true)
+	convergenciaEntera2 = round(convergencia2);
+	printf("El valor de convergencia aproximado es: %lf \n", convergencia);
+	printf("El valor de convergencia aproximado es: %lf \n", convergencia2);
+	if(convergencia2!=convergencia)
 	{
 		printf("La serie diverge\n");
 	}
