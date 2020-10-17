@@ -1,13 +1,13 @@
 /*
 *	Proyecto 2 ejercicio B
 *------------------------------------
-*Realiza en ejercicio B del proyecto
+*Realiza el ejercicio B del proyecto
 *numero 3 de dos maneras distintas 
 * y muestra el resultado al final
 *------------------------------------
 *Raul Jimenez 19017
 *Donaldo Garcia 19683
-*Bryan Alfaro 19372
+*Bryann Alfaro 19372
 *Oscar Saravia 19322
 *Diego Arreondo 19422
 *-----------------------------------*/

@@ -1,13 +1,13 @@
 /*
 *	Proyecto 3 ejercicio C
 *------------------------------------
-*Realiza en ejercicio C del proyecto
+*Realiza el ejercicio C del proyecto
 *numero 3 de dos maneras distintas 
 * y muestra el resultado al final
 *------------------------------------
 *Raul Jimenez 19017
 *Donaldo Garcia 19683
-*Bryan Alfaro 19372
+*Bryann Alfaro 19372
 *Oscar Saravia 19322
 *Diego Arreondo 19422
 *-----------------------------------*/
@@ -95,8 +95,8 @@ int main(){
 	
 	convergenciaEntera = round(convergencia);
 	convergenciaEntera2 = round(convergencia2);
-	printf("El valor de convergencia aproximado es: %lf \n", convergencia);
-	printf("El valor de convergencia aproximado es: %lf \n", convergencia2);
+	printf("El valor de la serie con n = 700,000 es: %lf \n", convergencia);
+	printf("El valor de la serie con n = 710,000 es: %lf \n", convergencia2);
 	if(convergencia2!=convergencia)
 	{
 		printf("La serie diverge\n");
