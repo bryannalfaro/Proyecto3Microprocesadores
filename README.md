@@ -8,7 +8,7 @@
 
 -Donaldo Garcia 19683.
 
--Bryan Alfaro 19372.
+-Bryann Alfaro 19372.
 
 -Oscar Saravia 19322.
 
