@@ -26,12 +26,12 @@ int main(){
 	#define n 10000
 	int hilos;
 	double convergencia=0;
-	int convergenciaEntera=0;
+	
 	double expresion=0;
 	double valor=0;
 	
 	double convergencia2=0;
-	int convergenciaEntera2=0;
+	
 	double expresion2=0;
 	double valor2=0;
 	
@@ -72,7 +72,6 @@ int main(){
 	#pragma omp parallel for num_threads(hilos)
 		for(int i =1; i<700000; i++)
 		{
-			 
 			 valor = exp(1)-pow(1+(1/pow(i,2)),i);
 			
 			#pragma omp atomic 
@@ -84,7 +83,6 @@ int main(){
 		for(int i =1; i<710000; i++)
 		{
 			
-			 
 			 valor2 = exp(1)-pow(1+(1/pow(i,2)),i);
 			
 			#pragma omp atomic 
@@ -105,7 +103,6 @@ int main(){
 	else
 	{
 		printf("El valor de convergencia aproximado es: %lf \n", convergencia);
-		printf("El valor de convergencia entero es: %d \n", convergenciaEntera);
 	}
 	
 	return 0;	
