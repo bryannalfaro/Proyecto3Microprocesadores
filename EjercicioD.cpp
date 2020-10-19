@@ -52,11 +52,11 @@ int main(){
 	//Limite cuando la serie tiende a infinito
 	printf("Teorema de la divergencia: \n");
 	
-	expresion = 1-(1/sqrt(n));
+	expresion = exp(1)-pow(1+(1/pow(n,2)),n);
 	
 	valor = pow(round(expresion),n);
-	printf("Valor del limite: %lf\n",valor);
-	if(valor!=0)
+	printf("Valor del limite: %lf\n",expresion);
+	if(expresion!=0)
 	{
 		printf("Por el teorema la serie diverge\n");
 	}
