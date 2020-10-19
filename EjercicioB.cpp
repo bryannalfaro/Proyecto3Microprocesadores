@@ -29,6 +29,8 @@ int main()
 	//variables para convergencia
 	double convergencia = 0;
 	int convergenciaEntera = 0;
+	double convergencia2 = 0;
+	int convergenciaEntera2 = 0;
 	int valorLimite = 0;
 	
 	//valor con limites
@@ -62,17 +64,19 @@ int main()
 		for(int i =1; i<710000; i++)
 		{
 			//cada hilo realiza la operacion dada
-			double valor = 1.f/(i*(i+1.f));
+			double valor2 = 1.f/(i*(i+1.f));
 			
 			//cada hilo almacena el dato en la variable convergencia
 			#pragma omp atomic 
-				convergencia+=valor; 
+				convergencia2+=valor2; 
 		}	
 	
 	//se redondea la la sumatoria 
 	convergenciaEntera = round(convergencia);
+	convergenciaEntera2 = round(convergencia2);
 	//Se muestran los valores originales y redondeados
-	printf("El valor de convergencia aproximado es: %lf \n", convergencia);
+	printf("El valor de convergencia aproximado con n= 598461 es: %lf \n", convergencia);
+	printf("El valor de convergencia aproximado con n= 710000 es: %lf \n", convergencia2);
 	printf("El valor de convergencia entero es: %d \n", convergenciaEntera);
 	
 	return 0;
