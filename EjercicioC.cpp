@@ -9,7 +9,7 @@
 *Donaldo Garcia 19683
 *Bryann Alfaro 19372
 *Oscar Saravia 19322
-*Diego Arreondo 19422
+*Diego Arredondo 19422
 *-----------------------------------*/
 #include <omp.h>
 #include <stdio.h>
@@ -26,12 +26,9 @@ int main(){
 	#define n 10000
 	int hilos;
 	double convergencia=0;
-	int convergenciaEntera=0;
 	double expresion=0;
 	double valor=0;
-	
 	double convergencia2=0;
-	int convergenciaEntera2=0;
 	double expresion2=0;
 	double valor2=0;
 	
@@ -72,29 +69,21 @@ int main(){
 	#pragma omp parallel for num_threads(hilos)
 		for(int i =1; i<700000; i++)
 		{
-			 
 			 valor = pow(1-(1/sqrt(i)),i);
 			
 			#pragma omp atomic 
-				convergencia+=valor;
-				
+				convergencia+=valor;	
 		}
 		
 	#pragma omp parallel for num_threads(hilos)
 		for(int i =1; i<710000; i++)
 		{
-			
-			 
 			 valor2 = pow(1-(1/sqrt(i)),i);
 			
 			#pragma omp atomic 
-				convergencia2+=valor2;
-				
+				convergencia2+=valor2;		
 		}	
 	
-	
-	convergenciaEntera = round(convergencia);
-	convergenciaEntera2 = round(convergencia2);
 	printf("El valor de la serie con n = 700,000 es: %lf \n", convergencia);
 	printf("El valor de la serie con n = 710,000 es: %lf \n", convergencia2);
 	if(convergencia2!=convergencia)
@@ -105,7 +94,6 @@ int main(){
 	else
 	{
 		printf("El valor de convergencia aproximado es: %lf \n", convergencia);
-		printf("El valor de convergencia entero es: %d \n", convergenciaEntera);
 	}
 	
 	return 0;	

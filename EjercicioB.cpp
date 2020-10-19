@@ -9,7 +9,7 @@
 *Donaldo Garcia 19683
 *Bryann Alfaro 19372
 *Oscar Saravia 19322
-*Diego Arreondo 19422
+*Diego Arredondo 19422
 *-----------------------------------*/
 #include <omp.h>
 #include <stdio.h>
