@@ -55,6 +55,20 @@ int main()
 				convergencia+=valor; 
 		}	
 	
+	
+		
+	//parte paralela para obtener las sumatoria con otra n
+	#pragma omp parallel for num_threads(n)
+		for(int i =1; i<710000; i++)
+		{
+			//cada hilo realiza la operacion dada
+			double valor = 1.f/(i*(i+1.f));
+			
+			//cada hilo almacena el dato en la variable convergencia
+			#pragma omp atomic 
+				convergencia+=valor; 
+		}	
+	
 	//se redondea la la sumatoria 
 	convergenciaEntera = round(convergencia);
 	//Se muestran los valores originales y redondeados
