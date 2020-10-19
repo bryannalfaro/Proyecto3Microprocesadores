@@ -35,6 +35,7 @@ int main(){
 	printf("Bienvenido al programa de calculo de serie\n");
 	printf("Se calculara la serie de (1-1/raiz(n))^n\n");
 	
+	//Se le permite al usuario especificar los hilos
 	printf("----------------------------------------------\n");
 	printf("Porfavor ingrese la cantidad de hilos que desea para el programa: (menor a 250)\n");
 	
@@ -86,6 +87,7 @@ int main(){
 	
 	printf("El valor de la serie con n = 700,000 es: %lf \n", convergencia);
 	printf("El valor de la serie con n = 710,000 es: %lf \n", convergencia2);
+	
 	if(convergencia2!=convergencia)
 	{
 		printf("La serie diverge\n");
