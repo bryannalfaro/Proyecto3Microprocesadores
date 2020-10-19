@@ -36,7 +36,7 @@ int main(){
 	double valor2=0;
 	
 	printf("Bienvenido al programa de calculo de serie\n");
-	printf("Se calculara la serie de (1-1/raiz(n))^n\n");
+	printf("Se calculara la serie de e-(1+1/n^2)^n\n");
 	
 	printf("----------------------------------------------\n");
 	printf("Porfavor ingrese la cantidad de hilos que desea para el programa: (menor a 250)\n");
